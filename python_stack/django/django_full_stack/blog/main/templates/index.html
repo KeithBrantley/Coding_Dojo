@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+</head>
+
+<body>
+    <h1>This is some Blog</h1>
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    <form action="/new_blogger" method="get">
+        {% csrf_token %}
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name"><br>
+        <label for="desc">Description</label><br>
+        <textarea name="desc" id="desc" cols="30" rows="10"></textarea>
+        <button>Create</button>
+    </form>
+    <ul>
+        {% for b in bloggers %}
+        <li>{{b.name}}</li>
+        <li>{{b.desc}}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

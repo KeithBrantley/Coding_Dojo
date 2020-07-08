@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="/results" method="POST">
+        {% csrf_token %}
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name"><br>
+        <label for="dojo_location">Dojo Location:</label>
+        <input type="text" name="dojo_location" id="dojo_location"><br>
+        <label for="favorite_language">Favorite Language:</label>
+        <input type="text" name="favorite_language" id="favorite_language"><br>
+        <label for="comment" id="comment">Comment (optional)</label><br>
+        <textarea name="comment" id="comment" cols="50" rows="5"></textarea><br>
+        <button type="submit">Button</button>
+    </form>
+</body>
+
+</html>

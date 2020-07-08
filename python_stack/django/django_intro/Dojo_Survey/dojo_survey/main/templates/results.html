@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Submitted Info:</h1>
+    <form action="/go_back" method="POST">
+        {% csrf_token %}
+        <p>Name: {{name_from_form}}</p>
+
+        <p>Dojo Location: {{dojo_location_from_form}}</p>
+
+        <p>Favorite Language: {{fav_lang_from_form}}</p>
+
+        <p>Comment: {{comment_from_form}}</p>
+
+        <button>Go Back</button>
+
+    </form>
+</body>
+
+</html>

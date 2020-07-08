@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo Fruit Store</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<!-- C:\Users\keith\Documents\CodingDojo\python_stack\django\django_intro\Dojo_Fruit_Stand\dojo_fruit_stand\main\static\css -->
+<body>
+    <h1>Dojo Fruit Store!</h1>
+    <h3>What would you like to buy?</h3>
+    <div class='items'>
+        <div id='fruit_name'>
+            <p>Fruit Name</p>
+            <ul>
+                <li>Strawberry</li>
+                <li>Raspberry</li>
+                <li>Apple</li>
+            </ul>
+        </div>
+        <div id='quantity'>
+            <p>Quantity</p>
+            <ul>
+                <li>some num</li>
+                <li>some num</li>
+                <li>some num</li>
+            </ul>
+        </div>
+    </div>
+    <h3>Your information</h3>
+    <div class='user_info'>
+        <form action="/checkout" method="POST">
+            {% csrf_token %}
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name"><br>
+            <label for="student_id">Your Student ID:</label>
+            <input type="text" name="student_it" id="student_id"><br>
+            <input type="submit" value="Buy me stuff!">
+            <!-- <button>Buy me stuff!</button> -->
+        </form>
+    </div>
+    <div id='welcome'>
+        <h3>Welcome to Dojo Fruit Store!</h3>
+        <p>Your dojo decided to buy fruits for all the students! Please use this app to tell us what you would like to
+            have! Once we get your order, we'll change your student account automatically</p>
+
+        <p>Dojo Fruit Store is proudly built using Django</p>
+    </div>
+</body>
+
+</html>

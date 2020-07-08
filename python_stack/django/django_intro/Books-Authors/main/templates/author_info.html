@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Author Info</title>
+</head>
+<body>
+    <a href="/author">Back</a>
+    <h1>{{this_author.first_name}} {{this_author.last_name}}</h1>
+    <h2>ID: {{this_author.id}}</h2>
+    <p>{{this_author.notes}}</p>
+
+    <p>Books:</p>
+    {% for book in authors %}
+        {{book.title}}
+    {% endfor %}
+</body>
+</html>
