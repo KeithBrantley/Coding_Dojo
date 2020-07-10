@@ -14,7 +14,7 @@ def create_user(request):
         "last_name_on_template" : last_name_from_form,
         "email_on_template" : email_from_form
     }
-    return redirect('/success')
+    return render(request, 'show.html', context)
 
-def success(request):
-    return render(request, "success.html")
+# def success(request):
+#     return render(request, "success.html")
