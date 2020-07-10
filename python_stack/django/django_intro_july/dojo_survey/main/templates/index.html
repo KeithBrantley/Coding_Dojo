@@ -1,11 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dojo Survey</title>
+    <title>Dojo Survey Index</title>
 </head>
+
 <body>
-    <h1>It works!</h1>
+    <form action="/result" method="post">
+        {% csrf_token%}
+        <label for="your_name">Your Name:</label>
+        <input type='text' name='your_name'><br>
+        <label for="dojo_location">Dojo Location:</label>
+        <select name="dojo_location" id="dojo_location">
+            <option value="Seattle">Seattle</option>
+            <option value="Oregon">Oregon</option>
+            <option value="New York">New York</option>
+            <option value="California">California</option>
+        </select><br>
+        <label for="favorite_language">Favorite Language</label>
+        <select name="favorite_language" id="favorite_language">
+            <option value="Python">Python</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="Java">Java</option>
+            <option value="C#">C#</option>
+        </select><br>
+        <!-- <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label>
+        <input type="radio" id="other" name="gender" value="other">
+        <label for="other">Other</label><br> -->
+        <label for="comment">Comment (optional)</label><br>
+        <textarea name="comment" id="comment" cols="30" rows="10"></textarea><br>
+        <button type="submit">Button</button>
+    </form>
 </body>
+
 </html>
