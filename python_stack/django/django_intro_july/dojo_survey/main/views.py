@@ -13,7 +13,7 @@ def create_result(request):
     favorite_language_from_form = request.POST['favorite_language']
     comment_from_form = request.POST['comment']
     context = {
-        "your_name_on_template" : your_name_from_form,
+        "your_name_on_template": your_name_from_form,
         "dojo_location_on_template": dojo_location_from_form,
         "favorite_language_on_template": favorite_language_from_form,
         "comment_on_template": comment_from_form
