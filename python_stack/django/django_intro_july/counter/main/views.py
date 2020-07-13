@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 # Create your views here.
 def index(request):
@@ -7,3 +7,7 @@ def index(request):
     else:
         request.session['counter'] = 1
     return render(request, 'index.html')
+
+def delete_session(request):
+    del request.session['counter']
+    return redirect('/')
