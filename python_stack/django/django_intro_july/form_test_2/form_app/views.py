@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 # Create your views here.
 def index(request):
@@ -15,4 +15,7 @@ def create_user(request):
         "email_on_template": email_from_form,
         "comment_on_template": comment_from_form,
     }
-    return render(request, "show.html", context)
+    return redirect('/success')
+
+def success(request):
+    return render(request, 'success.html')
