@@ -11,8 +11,9 @@
     <h1>Welcome To The Great Number Game!</h1>
     <p>I am thinking of a number between 1 and 100!</p>
     <p>Take a guess!</p>
-    <form action="/guess" method="post">
-        <input type='number' id="number"><br>
+    <form action="/guess" method="POST">
+        {% csrf_token %}
+        <input type='guess' id="guess"><br>
         <button type="submit">Submit</button>
     </form>
 </body>
