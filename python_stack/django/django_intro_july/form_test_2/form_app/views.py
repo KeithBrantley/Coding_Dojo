@@ -5,17 +5,18 @@ def index(request):
     return render(request, "index.html")
 
 def create_user(request):
-    first_name_from_form = request.POST['first_name']
-    last_name_from_form = request.POST['last_name']
-    email_from_form = request.POST['email']
-    comment_from_form = request.POST['comment']
+    request.session['first_name'] = request.POST['first_name']
+    request.session['last_name'] = request.POST['last_name']
+    request.session['email'] = request.POST['email']
+    request.session['comment'] = request.POST['comment']
     context = {
-        "first_name_on_template": first_name_from_form,
-        "last_name_on_template": last_name_from_form,
-        "email_on_template": email_from_form,
-        "comment_on_template": comment_from_form,
+        "first_name" : request.session['first_name'],
+        "last_name": request.session['last_name'],
+        "email": request.session['email'],
+        "comment": request.session['comment'],
     }
     return redirect('/success')
 
 def success(request):
+    print(request.session)
     return render(request, 'success.html')
