@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Book</title>
+</head>
+<body>
+    <h1>{{ book.title }}</h1>
+    <p>{{ book.id }}</p>
+    <p>Description: {{ book.desc }}</p>
+    <p>Authors</p>
+    {% for authors in all_authors %}
+    <ul>
+        <li>{{}}</li>
+    </ul>
+    {% emdfor %}
+</body>
+</html>
