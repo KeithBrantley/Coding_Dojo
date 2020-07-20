@@ -17,3 +17,8 @@ def add_book(request):
         )
     return redirect('/')
 
+def view_book(request, book_id):
+    context = {
+        'book_id': Book.objects.get(id=book_id),
+    }
+    return render(request, 'view_book.html', context)

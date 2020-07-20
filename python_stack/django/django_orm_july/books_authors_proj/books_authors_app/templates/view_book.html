@@ -6,14 +6,10 @@
     <title>View Book</title>
 </head>
 <body>
-    <h1>{{ book.title }}</h1>
-    <p>{{ book.id }}</p>
-    <p>Description: {{ book.desc }}</p>
+    <h1>{{ book_id.title }}</h1><br>
+    <p>ID: {{ book_id.id }}</p><br>
+    <p>Description: {{ book_id.desc }}</p><br>
     <p>Authors</p>
-    {% for authors in all_authors %}
-    <ul>
-        <li>{{}}</li>
-    </ul>
-    {% emdfor %}
+
 </body>
 </html>
