@@ -6,12 +6,12 @@
     <title>View Book</title>
 </head>
 <body>
-    <h1>{{ book_id.title }}</h1><br>
-    <p>ID: {{ book_id.id }}</p><br>
-    <p>Description: {{ book_id.desc }}</p><br>
+    <h1>{{ auth_id.first_name}} {{ auth_id.last_name }}</h1><br>
+    <p>ID: {{ auth_id.id}}</p><br>
+    <p>Description: {{ auth_id.notes }}</p><br>
     <p>Authors</p>
-    # PLACEHOLDER FOR AUTHORS#
-    <form action="add_auth_to_book" method="post">
+    # PLACEHOLDER FOR BOOKS#
+    <form action="#" method="post">
         {% csrf_token%}
         <select name="auth_id" id="auth_id">
             <option value="#"></option>

@@ -9,14 +9,14 @@
 
 <body>
     <h1>Add an Author</h1>
-    <form action="/" method=post>
+    <form action="add_author" method=post>
         {% csrf_token%}
         <label for="first_name">First Name:</label>
         <input type="text" name="first_name" id="first_name"><br>
         <label for="last_name">Last Name:</label>
         <input type="text" name="last_name"id="last_name"><br>
-        <label for="Notes">Notes:</label><br>
-        <textarea name="Notes" id="notes" cols="30" rows="10"></textarea><br>
+        <label for="notes">Notes:</label><br>
+        <textarea name="notes" id="notes" cols="30" rows="10"></textarea><br>
         <button>Add</button>
     </form>
 
@@ -30,7 +30,7 @@
         <tr>
             <td>{{ author.id }}</td>
             <td>{{ author.first_name }} {{author.last_name}}</td>
-            <td><a href="/view_book/{{author.id}}">View</a></td>
+            <td><a href="/view_author/{{author.id}}">View</a></td>
         </tr>
     {% endfor %}
     </table>
