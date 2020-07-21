@@ -24,13 +24,13 @@
             <th>Title</th>
             <th>Action</th>
         </tr>
-    {% for book in all_books %}
+        {% for book in all_books %}
         <tr>
             <td>{{ book.id }}</td>
             <td>{{ book.title }}</td>
             <td><a href="/view_book/{{book.id}}">View</a></td>
         </tr>
-    {% endfor %}
+        {% endfor %}
     </table>
 </body>
 

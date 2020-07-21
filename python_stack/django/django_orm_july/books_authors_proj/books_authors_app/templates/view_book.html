@@ -10,7 +10,12 @@
     <p>ID: {{ book_id.id }}</p><br>
     <p>Description: {{ book_id.desc }}</p><br>
     <p>Authors</p>
-    # PLACEHOLDER FOR AUTHORS#
+    <!-- {{ book_id.authors.all }} -->
+    <ul>
+        {% for author in book_id.authors.all %}
+            <li>{{ author }}</li>
+        {% endfor %}
+    </ul>
     <form action="add_auth_to_book" method="post">
         {% csrf_token%}
         <select name="auth_id" id="auth_id">

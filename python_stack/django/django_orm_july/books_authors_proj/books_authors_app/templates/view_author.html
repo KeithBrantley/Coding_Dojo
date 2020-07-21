@@ -10,7 +10,12 @@
     <p>ID: {{ auth_id.id}}</p><br>
     <p>Description: {{ auth_id.notes }}</p><br>
     <p>Authors</p>
-    # PLACEHOLDER FOR BOOKS#
+    {{ author_id.books.all }}
+    <ul>
+        {% for book in author_id.books.all %}
+            <li>{{ book }}</li>
+        {% endfor %}
+    </ul>
     <form action="#" method="post">
         {% csrf_token%}
         <select name="auth_id" id="auth_id">

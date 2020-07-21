@@ -19,7 +19,7 @@ def add_book(request):
 def view_book(request, book_id):
     context = {
         'book_id': Book.objects.get(id=book_id),
-        'auth_id': Author.objects.all()
+        'authors': Author.objects.all()
     }
     return render(request, 'view_book.html', context)
 
@@ -39,6 +39,7 @@ def add_author(request):
 
 def view_author(request, auth_id):
     context = {
-        'auth_id': Author.objects.get(id=auth_id)
+        'auth_id': Author.objects.get(id=auth_id),
+        'books': Book.objects.all(),
     }
     return render(request, 'view_author.html', context)
