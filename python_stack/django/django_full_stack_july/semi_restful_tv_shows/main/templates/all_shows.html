@@ -7,6 +7,32 @@
 </head>
 <body>
     <h1>All Shows</h1>
-    <a href="#">Add a New Show</a>
+    <a href="shows/new">Add a New Show</a>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Network</th>
+                <th>Release Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for show in shows%}
+            <tr>
+                <td><a href="/shows/{{show.id}}">{{show.id}}</a></td>
+                <td>{{show.title}}</td>
+                <td>{{show.network}}</td>
+                <td>{{show.release_date}}</td>
+                <td>
+                    <a href="/shows/{{show.id}}">Show</a> |
+                    <a href="/shows/{{show.id}}/edit">Edit</a> |
+                    <a href="/shows/{{show.id}}/delete">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </body>
 </html>

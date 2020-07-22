@@ -6,9 +6,20 @@
     <title>Edit Show</title>
 </head>
 <body>
-    <a href="#">Go Back</a>
-    <h1>Edit Show</h1>
-    <button>Update</button>
-    <a href="#">Go to Show</a>
+    <a href="/shows">Go Back</a>
+    <h1>Edit Show {{ show.id }}</h1>
+    <form action="/shows/{{ show.id }}/update" method="post">
+        {% csrf_token%}
+        <label for="title">Title</label>
+        <input type="text" name="title" id="title" value="{{show.title}}"><br>
+        <label for="network">Network</label>
+        <input type="text" name="network" id="network" value="{{show.network}}"}>
+        <label for="release_date">Release Date</label>
+        <input type="date" name="release_date" id="release_date" value="{{show.release_date}}"><br>
+        <label for="description">Description</label><br>
+        <textarea name="description" id="description" cols="30" rows="10">{{show.description}}</textarea><br>
+        <button>Update</button>
+    </form>
+    <a href="/shows/{{ show.id }}">Go to show</a>
 </body>
 </html>

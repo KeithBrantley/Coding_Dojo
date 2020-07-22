@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TV SHOW</title>
 </head>
+
 <body>
-    <a href="#">Go Back</a>
+    <a href="/shows">Go Back</a>
     <h1>TV Show: {{ show.id }}</h1>
     <h3>Title: {{ show.title }}</h3>
     <h3>Network: {{ show.network }}</h3>
     <h3>Release Date: {{ show.release_date }}</h3>
     <h3>Description: {{ show.description }}</h3>
-    <h3>Last Updated:</h3>
-    <a href="#">Edit</a>|<a href="#">Delete</a>
+    <h3>Last Updated: {{show.updated_at}}</h3>
+    <a href="/shows/{{show.id}}/edit">Edit</a> | <a href="/shows/{{show.id}}/delete">Delete</a>
 </body>
+
 </html>
