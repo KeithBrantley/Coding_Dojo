@@ -19,9 +19,16 @@ def create_book(request):
 def one_book(request, book_id):
     one_book = Book.objects.get(id=book_id)
     context = {
-        "one_book": one_book
+        "one_book": one_book,
+        "all_authors": Author.objects.all()
     }
     return render(request, 'one_book.html', context)
+
+def add_auth_to_book(request):
+    author = Author.objects.get(id=request.POST['auth_id'])
+    book = Book.objects.get(id=request.POST['book_id'])
+    book.authors.add(author)
+    return redirect(f'book/{book.id}')
 
     # Author
 
@@ -42,6 +49,13 @@ def create_author(request):
 def one_author(request, author_id):
     one_author = Author.objects.get(id=author_id)
     context = {
-        "one_author": one_author
+        "one_author": one_author,
+        "all_books": Book.objects.all()
     }
     return render(request, 'one_author.html', context)
+
+def add_book_to_auth(request):
+    author = Author.objects.get(id=request.POST['auth_id'])
+    book = Book.objects.get(id=request.POST['book_id'])
+    book.authors.add(author)
+    return redirect(f'author/{author.id}')

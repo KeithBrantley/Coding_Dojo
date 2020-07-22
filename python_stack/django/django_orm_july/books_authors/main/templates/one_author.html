@@ -10,16 +10,18 @@
     <h3>ID: {{one_author.id}}</h3>
     <h3>Notes: {{one_author.notes}}</h3>
     <h3>Books</h3>
-
-    # PLACEHOLDER FOR BOOKS
+    {% for book in one_author.books.all %}
+        <p>- {{book.title}}</p>
+    {% endfor %}
     <form action="/add_book_to_auth" method="post">
         {% csrf_token %}
         <select name="book_id" id="book_id">
-            <option value="#">BOOK 1</option>
-            <option value="#">BOOK 2</option>
-            <option value="#">BOOK 3</option>
-        </select>
+            {% for book in all_books %}
+                <option value="{{book.id}}">{{book.title}}</option>
+            {% endfor %}
+            </select>
         <button>Add</button>
+        <input type="hidden" name="auth_id" value="{{one_author.id}}">
     </form>
 </body>
 </html>
