@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Book</title>
+</head>
+<body>
+    <h1>{{one_book.title}}</h1>
+    <h3>ID: {{one_book.id}}</h3>
+    <h3>Description: {{one_book.description}}</h3>
+    <h3>Authors</h3>
+
+    # PLACEHOLDER FOR Authors
+    <form action="/add_auth_to_book" method="post">
+        {% csrf_token %}
+        <select name="auth_id" id="auth_id">
+            <option value="#">AUTHOR 1</option>
+            <option value="#">AUTHOR 2</option>
+            <option value="#">AUTHOR 3</option>
+        </select>
+        <button>Add</button>
+    </form>
+</body>
+</html>
