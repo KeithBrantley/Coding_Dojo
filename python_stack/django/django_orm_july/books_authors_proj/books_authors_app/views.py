@@ -7,7 +7,7 @@ def index(request):
     context = {
         'all_books': Book.objects.all(),
     }
-    return render(request, 'index.html', context)
+    return render(request, 'book.html', context)
 
 def add_book(request):
     Book.objects.create(
@@ -22,6 +22,14 @@ def view_book(request, book_id):
         'authors': Author.objects.all()
     }
     return render(request, 'view_book.html', context)
+
+def add_auth_to_book(request):
+    author = Author.objects.get(id=request.POST['auth_id)']
+    book = Book.objects.get(id=request.POST['book_id'])
+    book.authors.add(author)
+    return redirect(f'book/{book.id}')
+
+# Author
 
 def author(request):
     context = {

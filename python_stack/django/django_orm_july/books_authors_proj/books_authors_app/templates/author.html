@@ -21,18 +21,22 @@
     </form>
 
     <table>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Actiion</th>
-        </tr>
-    {% for author in all_authors %}
-        <tr>
-            <td>{{ author.id }}</td>
-            <td>{{ author.first_name }} {{author.last_name}}</td>
-            <td><a href="/view_author/{{author.id}}">View</a></td>
-        </tr>
-    {% endfor %}
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Actiion</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for author in all_authors %}
+                <tr>
+                    <td>{{ author.id }}</td>
+                    <td>{{ author.first_name }} {{author.last_name}}</td>
+                    <td><a href="/view_author/{{author.id}}">View</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
     </table>
 </body>
 

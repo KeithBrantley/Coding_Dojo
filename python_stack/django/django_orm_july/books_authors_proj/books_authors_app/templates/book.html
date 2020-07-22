@@ -19,18 +19,22 @@
     </form>
 
     <table>
-        <tr>
-            <th>ID</th>
-            <th>Title</th>
-            <th>Action</th>
-        </tr>
-        {% for book in all_books %}
-        <tr>
-            <td>{{ book.id }}</td>
-            <td>{{ book.title }}</td>
-            <td><a href="/view_book/{{book.id}}">View</a></td>
-        </tr>
-        {% endfor %}
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for book in all_books %}
+            <tr>
+                <td>{{ book.id }}</td>
+                <td>{{ book.title }}</td>
+                <td><a href="/view_book/{{book.id}}">View</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
     </table>
 </body>
 

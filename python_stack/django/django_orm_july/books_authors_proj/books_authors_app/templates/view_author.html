@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Book</title>
 </head>
+
 <body>
     <h1>{{ auth_id.first_name}} {{ auth_id.last_name }}</h1><br>
     <p>ID: {{ auth_id.id}}</p><br>
@@ -13,18 +15,19 @@
     {{ author_id.books.all }}
     <ul>
         {% for book in author_id.books.all %}
-            <li>{{ book }}</li>
+        <li>{{ book }}</li>
         {% endfor %}
     </ul>
-    <form action="#" method="post">
+    <form action="/add_book_to_auth" method="post">
         {% csrf_token%}
-        <select name="auth_id" id="auth_id">
-            <option value="#"></option>
-            <option value="#"></option>
-            <option value="#"></option>
+        <select name="book_id" id="book_id">
+            <option value="#">Book 1</option>
+            <option value="#">Book 2</option>
+            <option value="#">Book 3</option>
         </select>
-
+        <button>Add</button>
     </form>
 
 </body>
+
 </html>
