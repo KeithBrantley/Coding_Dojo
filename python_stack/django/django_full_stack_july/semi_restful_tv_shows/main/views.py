@@ -33,7 +33,6 @@ def all_shows(request):
     return render(request, "all_shows.html", context)
 
 def edit(request, show_id):
-    context = {
         'show': Show.objects.get(id=show_id)
     }
     return render(request, 'edit_show.html', context)
