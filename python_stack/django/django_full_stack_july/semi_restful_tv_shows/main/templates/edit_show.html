@@ -20,6 +20,9 @@
         <textarea name="description" id="description" cols="30" rows="10">{{show.description}}</textarea><br>
         <button>Update</button>
     </form>
+    {% for error in messages %}
+    <p>{{error}}</p>
+    {% endfor %}
     <a href="/shows/{{ show.id }}">Go to show</a>
 </body>
 </html>

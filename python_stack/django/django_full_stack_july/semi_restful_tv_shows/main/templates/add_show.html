@@ -22,6 +22,9 @@
         <textarea name="description" id="description" cols="30" rows="10"></textarea><br>
         <button>Create</button>
     </form>
+    {% for error in messages %}
+    <p>{{error}}</p>
+    {% endfor %}
 </body>
 
 </html>
