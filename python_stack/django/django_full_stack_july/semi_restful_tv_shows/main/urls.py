@@ -9,6 +9,4 @@ urlpatterns = [
     path('shows', views.all_shows),
     path('shows/<int:show_id>/edit', views.edit),
     path('shows/<int:show_id>/update', views.update),
-
-
 ]
