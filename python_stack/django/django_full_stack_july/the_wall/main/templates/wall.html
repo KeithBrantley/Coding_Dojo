@@ -11,9 +11,26 @@
     <p>Welcome {{ user.first_name }}</p>
     <form action="/post_message" method="post">
         {% csrf_token %}
-        <label for="post">Post Message</label><br>
-        <textarea name="post" id="post" cols="30" rows="10"></textarea><br>
+        <label for="message">Post Message</label><br>
+        <textarea name="message" id="message" cols="100" rows="10"></textarea><br>
         <button>Post a message</button>
     </form>
+    {% for message in messages %}
+    <p>{{message.user.first_name}} {{message.user.first_name}} - {{message.created_at}}</p>
+    <p>{{message}}</p>
+    {% for comment in comments %}
+    {% if comment.message.id == message.id %}
+    <p>First Name - Last Name | Date</p>
+    <p>Comment Content</p>
+    {% endif %}
+    {% endfor %}
+    <form action="/post_comment" method="post">
+        {% csrf_token %}
+        <label for="comment">Post Comment</label><br>
+        <textarea name="comment" id="comment" cols="100" rows="5"></textarea><br>
+        <input type="hidden" value={{message.id}}>
+        <button>Post a Comment</button>
+    </form>
+    {% endfor %}
 </body>
 </html>

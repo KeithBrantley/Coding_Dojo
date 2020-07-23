@@ -1,11 +1,14 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from .models import User
+from .models import User, Message, Comment
 import bcrypt
 
 # Create your views here.
+
+
 def index(request):
     return render(request, 'index.html')
+
 
 def register(request):
     errors = User.objects.registration_validator(request.POST)
@@ -13,7 +16,8 @@ def register(request):
         for msg in errors.values():
             messages.error(request, msg)
         return redirect('/')
-    hash = bcrypt.hashpw(request.POST['password'].encode(), bcrypt.gensalt()).decode()
+    hash = bcrypt.hashpw(
+        request.POST['password'].encode(), bcrypt.gensalt()).decode()
     new_user = User.objects.create(
         first_name=request.POST['first_name'],
         last_name=request.POST['last_name'],
@@ -22,6 +26,7 @@ def register(request):
     )
     request.session['user_id'] = new_user.id
     return redirect('/wall')
+
 
 def login(request):
     errors = User.objects.login_validator(request.POST)
@@ -40,10 +45,27 @@ def login(request):
 
 
 def wall(request):
-    context = {
-        'user': User.objects.get(id=request.session['user_id'])
-    }
-    return render(request, 'wall.html', context)
+    # if 'user_id' not in request.session:
+    #     return redirect('/')
+    # elif 'user_id' in request.session:
+    #     context = {
+    #         'username': User.objects.get(id=request.session['user_id']),
+    #         'all_messages': reversed(Messages.objects.all()),
+    #         'user_id': request.session['user_id'],
+    #     }
+    #     return render(request, 'comments.html', context)
+    # # context = {
+    #     'user': User.objects.get(id=request.session['user_id'])
+    # }
+    return render(request, 'wall.html')
+
+
+def message(request):
+    Message.objects.create(
+        message = request.POST['message']
+        # user = request.get(id=request.session['user_id'])
+    )
+    return redirect('/wall')
 
 
 def logoff(request):
