@@ -6,15 +6,35 @@
     <title>Wall Assignment</title>
 </head>
 <body>
-    <h1>CodingDojo Wall</h1>
-    <h3>Welcome "Some name"</h3>
-    <a href="/log_off">log off</a>
-    <form action="" method="post">
-        {% csrf_token %}
-        
-
-
-
+    <h1>Wall Assignment</h1>
+    <h2>Registration</h2>
+    <form action="/register" method="post">
+        {% csrf_token%}
+        <label for="first_name">First Name</label>
+        <input type="text" name="first_name" id="first_name"><br>
+        <label for="last_name">Last Name</label>
+        <input type="text" name="last_name" id="last_name"><br>
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email"><br>
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password"><br>
+        <label for="confirm_pw">Confirm PW</label>
+        <input type="password" name="confirm_pw" id="confirm_pw"><br>
+        <button>Register</button>
     </form>
+    <h2>Login</h2>
+    <form action="/login" method="post">
+        {% csrf_token %}
+        <label for="email">Email</label>
+        <input type="email" name="login_email" id="email"><br>
+        <label for="password">Password</label>
+        <input type="password" name="login_password" id="password"><br>
+        <button>Login</button>
+    </form>
+    {% if messages %}
+        {% for message in messages %}
+            <p>{{message}}</p>
+        {% endfor %}
+    {% endif %}
 </body>
 </html>
