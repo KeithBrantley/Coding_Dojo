@@ -27,11 +27,16 @@
     <form action="/login" method="post">
         {% csrf_token %}
         <label for="email">Email</label>
-        <input type="email" name="email" id="email"><br>
+        <input type="email" name="login_email" id="email"><br>
         <label for="password">Password</label>
-        <input type="password" name="password" id="password"><br>
+        <input type="password" name="login_password" id="password"><br>
         <button>Login</button>
     </form>
+    {% if messages %}
+        {% for message in messages %}
+            <p>{{message}}</p>
+        {% endfor %}
+    {% endif %}
 </body>
 
 </html>
