@@ -8,5 +8,12 @@
 <body>
     <h1>The Actual Wall</h1>
     <a href="/logoff">Log off</a>
+    <p>Welcome {{ user.first_name }}</p>
+    <form action="/post_message" method="post">
+        {% csrf_token %}
+        <label for="post">Post Message</label><br>
+        <textarea name="post" id="post" cols="30" rows="10"></textarea><br>
+        <button>Post a message</button>
+    </form>
 </body>
 </html>

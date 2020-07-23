@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.contrib import messages
 from .models import User
 import bcrypt
 
@@ -43,6 +44,7 @@ def wall(request):
         'user': User.objects.get(id=request.session['user_id'])
     }
     return render(request, 'wall.html', context)
+
 
 def logoff(request):
     request.session.flush()
