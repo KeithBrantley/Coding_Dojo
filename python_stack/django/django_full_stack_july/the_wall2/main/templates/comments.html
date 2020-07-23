@@ -15,7 +15,7 @@
         <textarea name="message" id="message" cols="100" rows="10"></textarea><br>
         <button>Post a message</button>
     </form>
-    {% for message in messages %}
+    {% for message in all_messages %}
     <p>{{message.user.first_name}} {{message.user.first_name}} - {{message.created_at}}</p>
     <p>{{message}}</p>
     {% for comment in comments %}

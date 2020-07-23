@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from .models import User
+from .models import User, Message, Comment
 import bcrypt
 
 # Create your views here.
@@ -40,7 +40,17 @@ def login(request):
     return redirect('/')
 
 def wall(request):
-    return render(request, 'comments.html')
+    if 'user_id' not in request.session:
+        return redirect('/')
+    elif 'user_id' in request.session:
+        context = {
+            'username': User.objects.get(id = request.session['user_id']),
+            'all_messages':reversed(Message.objects.all()),
+            'user_id': request.session['user_id'],
+        }
+        return render(request, 'comments.html',context)
+
+    # return render(request, 'comments.html')
 
 def logoff(request):
     request.session.flush()
