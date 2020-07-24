@@ -8,8 +8,30 @@
 <body>
     <h1>Hello, {{user.first_name}} {{user.last_name}}!</h1>
     <a href="/logout">Logout</a>
-    <button href='#'>Create a a new trip!</button>
+    <a href='create_new_trip_page'>Create a a new trip!</a>
     <h3>Your trips:</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Destination</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Plan</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for trip in trips %}
+            <tr>
+                <td><a href="/dashboard/view_trip/{{trip.id}}">{{trip.destination}}</a></td>
+                <td>{{trip.start_date}}</td>
+                <td>{{trip.end_date}}</td>
+                <td>{{trip.plan}}</td>
+                <td><a href="/dashboard/delete/{{trip.id}}">Remove</a> | <a href="edit_trip/{{trip.id}}">Edit</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 
 </body>
 </html>

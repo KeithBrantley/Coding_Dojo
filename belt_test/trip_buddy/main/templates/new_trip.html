@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Trip</title>
+</head>
+
+<body>
+    <h1>Hello, {{user.first_name}} {{user.last_name}} create a new trip!</h1>
+    <form action="create_trip" method="post">
+        {% csrf_token %}
+        <label for="destination">Destination:</label>
+        <input type="text" name="destination" id="destination"><br>
+        <label for="start_date">Start Date:</label>
+        <input type="date" name="start_date" id="start_date"><br>
+        <label for="end_date">End Date:</label>
+        <input type="date" name="end_date" id="end_date"><br>
+        <label for="plan">Plan:</label><br>
+        <textarea name="plan" id="plan" cols="70" rows="10"></textarea><br>
+        <button><a href="/dashboard">Cancel</a></button><button>Submit</button>
+    </form>
+    {% if messages %}
+    {% for message in messages %}
+    <p>{{message}}</p>
+    {% endfor %}
+    {% endif %}
+</body>
+
+</html>
