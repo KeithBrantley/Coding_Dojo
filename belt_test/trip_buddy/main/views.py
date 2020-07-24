@@ -94,10 +94,10 @@ def update(request, trip_id):
         return redirect(f'/dashboard/update/{trip_id}')
     else:
         update = Trip.objects.get(id=trip_id)
-        update.destination = request.POST['update_destination']
-        update.start_date = request.POST['update_start_date']
-        update.end_date = request.POST['update_end_date']
-        update.plan = request.POST['update_plan']
+        update.destination = request.POST['destination']
+        update.start_date = request.POST['start_date']
+        update.end_date = request.POST['end_date']
+        update.plan = request.POST['plan']
         update.save()
         return redirect('/dashboard')
 
