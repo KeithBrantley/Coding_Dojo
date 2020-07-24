@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add A Show!</title>
+</head>
+
+<body>
+    <h2>Add a New Show!</h2>
+    <form action="/process_show" method="post">
+        {% csrf_token %}
+        <label for="title">Title</label>
+        <input type="text" name="title" id="Title"><br>
+        <label for="network1">Add a Network</label>
+        <input type="text" name="network1" id="network1"><br>
+        <label for="network2">Or pick from existing</label>
+        <select name="network2" id="network2">
+            <option value="Fakework">Fake Network</option>
+        </select><br>
+        <label for="release_date">Release Date</label>
+        <input type="date" name="release_date" id="release_date"><br>
+        <label for="description">Description</label><br>
+        <textarea name="description" id="description" cols="30" rows="10"></textarea>
+        <button>Create</button>
+    </form>
+</body>
+
+</html>

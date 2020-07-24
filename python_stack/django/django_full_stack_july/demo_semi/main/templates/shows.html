@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Shows</title>
+</head>
+<body>
+    <h1>All Shows!</h1>
+    <a href="/logout">Logout</a>
+    <h3>Hi {{user.f_name}}</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Network</th>
+                <th>Release Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>123</td>
+                <td>Fake Show</td>
+                <td>Fake Network</td>
+                <td>Tomorrow</td>
+                <td><a href="#">Shows</a> | <a href="#">Edit</a> | <a href="#">Delete</a></td>
+            </tr>
+        </tbody>
+    </table>
+    <h3><a href="/add_show">Add New Show</a></h3>
+</body>
+</html>
