@@ -7,7 +7,7 @@
 </head>
 <body>
         <h1>Hello {{user.first_name}}! Lets Edit your Trip!</h1>
-        <a href="/dashboard/logout">Logout</a>
+        <a href="/logout">Logout</a>
         <form action="/dashboard/update/{{trip.id}}" method="POST">
             {% csrf_token %}
             <label for="destination">Destination</label>
