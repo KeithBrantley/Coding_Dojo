@@ -1,5 +1,5 @@
 {
-  "FilePath": "c:\\Users\\Learning PC\\Documents\\aspNet\\Portfolio\\Portfolio.csproj",
+  "FilePath": "c:\\Users\\Learning PC\\Documents\\Coding_Dojo\\c_sharp\\Portfolio\\Portfolio.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "3.0",
@@ -20521,17 +20521,17 @@
   "RootNamespace": "Portfolio",
   "Documents": [
     {
-      "FilePath": "c:\\Users\\Learning PC\\Documents\\aspNet\\Portfolio\\Views\\Home\\Projects.cshtml",
-      "TargetPath": "Views\\Home\\Projects.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Learning PC\\Documents\\aspNet\\Portfolio\\Views\\Home\\Index.cshtml",
+      "FilePath": "c:\\Users\\Learning PC\\Documents\\Coding_Dojo\\c_sharp\\Portfolio\\Views\\Home\\Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Learning PC\\Documents\\aspNet\\Portfolio\\Views\\Home\\Contact.cshtml",
+      "FilePath": "c:\\Users\\Learning PC\\Documents\\Coding_Dojo\\c_sharp\\Portfolio\\Views\\Home\\Projects.cshtml",
+      "TargetPath": "Views\\Home\\Projects.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Learning PC\\Documents\\Coding_Dojo\\c_sharp\\Portfolio\\Views\\Home\\Contact.cshtml",
       "TargetPath": "Views\\Home\\Contact.cshtml",
       "FileKind": "mvc"
     }

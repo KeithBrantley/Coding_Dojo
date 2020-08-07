@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Learning PC\\Documents\\aspNet\\Portfolio\\Portfolio.csproj",
+      "projectUniqueName": "C:\\Users\\Learning PC\\Documents\\Coding_Dojo\\c_sharp\\Portfolio\\Portfolio.csproj",
       "projectName": "Portfolio",
-      "projectPath": "C:\\Users\\Learning PC\\Documents\\aspNet\\Portfolio\\Portfolio.csproj",
+      "projectPath": "C:\\Users\\Learning PC\\Documents\\Coding_Dojo\\c_sharp\\Portfolio\\Portfolio.csproj",
       "packagesPath": "C:\\Users\\Learning PC\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Learning PC\\Documents\\aspNet\\Portfolio\\obj\\",
+      "outputPath": "C:\\Users\\Learning PC\\Documents\\Coding_Dojo\\c_sharp\\Portfolio\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Learning PC\\AppData\\Roaming\\NuGet\\NuGet.Config"

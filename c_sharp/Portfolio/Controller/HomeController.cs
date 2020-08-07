@@ -6,7 +6,7 @@ namespace Portfolio
         [HttpGet("")]
         public string Index()
         {
-            return "This is my Index!";
+            return "This is my Index";
         }
 
         [HttpGet("projects")]
