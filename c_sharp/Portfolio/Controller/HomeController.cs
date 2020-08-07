@@ -4,21 +4,21 @@ namespace Portfolio
     public class HomeController : Controller
     {
         [HttpGet("")]
-        public string Index()
+        public ViewResult Index()
         {
-            return "This is my Index";
+            return View("Index");
         }
 
         [HttpGet("projects")]
-        public string Projects()
+        public ViewResult Projects()
         {
-            return "These are my projects!";
+            return View("projects");
         }
 
         [HttpGet("contact")]
-        public string Contact()
+        public ViewResult Contact()
         {
-            return "This is my contact";
+            return View("contact");
         }
     }
 }
